@@ -3,6 +3,7 @@ name: Playwright Tests with Allure Report
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
   pull_request:
     branches: [ main ]
 

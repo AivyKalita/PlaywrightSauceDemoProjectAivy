@@ -1,0 +1,3 @@
+Checked Out and reached Address page!
+On the Checkout overview page
+Total price is correct!

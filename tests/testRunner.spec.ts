@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import * as dotenv from 'dotenv';
-import * as path from 'path';
+//import * as dotenv from 'dotenv';
+//import * as path from 'path';
 import { LoginSteps } from '../steps/loginSteps';
 import {selectProductSteps} from '../steps/selectProductSteps';
 import { environment } from '../playwright.config';

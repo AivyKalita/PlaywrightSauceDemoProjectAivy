@@ -1,6 +1,7 @@
 import {Page, expect} from '@playwright/test';
 import {AddressPage} from '../pages/addressPages.ts';
 
+
 export class AddressStep{
     classAddressPage: Page;
     classLocatorFN: AddressPage;
@@ -17,10 +18,10 @@ constructor (conspage:Page){
     this.classLocatorContinue = new AddressPage(conspage);
 }
 
-async fillAddressDetails(){
-    await this.classLocatorFN.firstName.fill('Zubi');   
-    await this.classLocatorLN.lastName.fill('Dubi');
-    await this.classLocatorZip.zipCode.fill('781028');
+async fillAddressDetails(data: {_firstName: string;_lastName: string;_zipCode: string }){
+    await this.classLocatorFN.firstName.fill(data._firstName);   
+    await this.classLocatorLN.lastName.fill(data._lastName);
+    await this.classLocatorZip.zipCode.fill(data._zipCode);
 
 }
 

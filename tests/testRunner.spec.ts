@@ -8,6 +8,7 @@ import {checkOutSteps} from '../steps/checkOutSteps';
 import {AddressStep} from '../steps/addressSteps';
 import {shippingSteps} from '../steps/shippingSteps';
 import { finishSteps } from '../steps/finishSteps';
+import  addressdata  from '../data/addressdata.json';
 
 // Load environment variables from .env file
 //const envPath = path.resolve(__dirname, '../.env');
@@ -56,7 +57,7 @@ test.describe(`SauceDemo Suite [${environment}]`, () => {
     await CheckoutPage.clickingOnCheckOutButton();
     await CheckoutPage.verifyAddressPage(); 
     const fillAddDetails = new AddressStep(page);
-    await fillAddDetails.fillAddressDetails();
+    await fillAddDetails.fillAddressDetails(addressdata);
     await fillAddDetails.clickOnContinue();
     await fillAddDetails.verifyCheckOutOverview();
     
@@ -70,7 +71,7 @@ test ('ShippingDetails', async ({page})=>{
     await CheckoutPage.clickingOnCheckOutButton();
     await CheckoutPage.verifyAddressPage(); 
     const fillAddDetails = new AddressStep(page);
-    await fillAddDetails.fillAddressDetails();
+    await fillAddDetails.fillAddressDetails(addressdata);
     await fillAddDetails.clickOnContinue();
     await fillAddDetails.verifyCheckOutOverview();
     const shipping = new shippingSteps(page);
@@ -86,7 +87,7 @@ test ('Till Finish Page', async ({page})=>{
     await CheckoutPage.clickingOnCheckOutButton();
     await CheckoutPage.verifyAddressPage(); 
     const fillAddDetails = new AddressStep(page);
-    await fillAddDetails.fillAddressDetails();
+    await fillAddDetails.fillAddressDetails(addressdata);
     await fillAddDetails.clickOnContinue();
     await fillAddDetails.verifyCheckOutOverview();
     const shipping = new shippingSteps(page);

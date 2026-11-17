@@ -24,6 +24,6 @@ async verifyAddressPage(){
 
 }
 async verifyAddressPagefail(){
-   await expect (this.classCheckOutPage.url()===('https://www.saucedemo.com/checkout-step-fail.html'));
+   await expect(this.classCheckOutPage).toHaveURL('https://www.saucedemo.com/checkout-step-fail.html');
     }
 };

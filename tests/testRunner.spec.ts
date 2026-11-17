@@ -43,9 +43,9 @@ test.describe(`SauceDemo Suite [${environment}]`, () => {
   test('should click on CheckOut Button', async ({ page }) => {
     const SelectProductSteps1 = new selectProductSteps(page);
     await SelectProductSteps1.selectAndAddProduct();
-    const CheckoutPage = new checkOutSteps(page);
-    await CheckoutPage.clickingOnCheckOutButton();
-    await CheckoutPage.verifyAddressPage(); 
+    const CheckoutStep = new checkOutSteps(page);
+    await CheckoutStep.clickingOnCheckOutButton();
+    await CheckoutStep.verifyAddressPagefail(); 
 
   });
 
@@ -53,9 +53,9 @@ test.describe(`SauceDemo Suite [${environment}]`, () => {
 
     const SelectProductSteps1 = new selectProductSteps(page);
     await SelectProductSteps1.selectAndAddProduct();
-    const CheckoutPage = new checkOutSteps(page);
-    await CheckoutPage.clickingOnCheckOutButton();
-    await CheckoutPage.verifyAddressPage(); 
+    const CheckoutStep = new checkOutSteps(page);
+    await CheckoutStep.clickingOnCheckOutButton();
+    await CheckoutStep.verifyAddressPage(); 
     const fillAddDetails = new AddressStep(page);
     await fillAddDetails.fillAddressDetails(addressdata);
     await fillAddDetails.clickOnContinue();
@@ -67,9 +67,9 @@ test ('ShippingDetails', async ({page})=>{
 
     const SelectProductSteps1 = new selectProductSteps(page);
     await SelectProductSteps1.selectAndAddProduct();
-    const CheckoutPage = new checkOutSteps(page);
-    await CheckoutPage.clickingOnCheckOutButton();
-    await CheckoutPage.verifyAddressPage(); 
+    const CheckoutStep = new checkOutSteps(page);
+    await CheckoutStep.clickingOnCheckOutButton();
+    await CheckoutStep.verifyAddressPage();
     const fillAddDetails = new AddressStep(page);
     await fillAddDetails.fillAddressDetails(addressdata);
     await fillAddDetails.clickOnContinue();
@@ -83,9 +83,9 @@ test ('Till Finish Page', async ({page})=>{
 
     const SelectProductSteps1 = new selectProductSteps(page);
     await SelectProductSteps1.selectAndAddProduct();
-    const CheckoutPage = new checkOutSteps(page);
-    await CheckoutPage.clickingOnCheckOutButton();
-    await CheckoutPage.verifyAddressPage(); 
+    const CheckoutStep = new checkOutSteps(page);
+    await CheckoutStep.clickingOnCheckOutButton();
+    await CheckoutStep.verifyAddressPage(); 
     const fillAddDetails = new AddressStep(page);
     await fillAddDetails.fillAddressDetails(addressdata);
     await fillAddDetails.clickOnContinue();

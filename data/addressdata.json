@@ -1,5 +1,5 @@
 {
   "_firstName": "Zubi",
-  "_lastName": "Dubi",
-  "_zipCode": "781028"
+  "_lastName": "^[A-Z][a-z]{4,8}|Mac|[A-Z]{1}'[a-z]$",
+  "_zipCode": "^[0-9]{6}$"
 }

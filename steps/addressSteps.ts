@@ -1,5 +1,6 @@
 import {Page, expect} from '@playwright/test';
 import {AddressPage} from '../pages/addressPages.ts';
+import RandExp from 'randexp';
 
 
 export class AddressStep{
@@ -18,10 +19,13 @@ constructor (conspage:Page){
     this.classLocatorContinue = new AddressPage(conspage);
 }
 
+
 async fillAddressDetails(data: {_firstName: string;_lastName: string;_zipCode: string }){
+    const generatedLastName = new RandExp(data._lastName).gen();
+    const generatedZipCode = new RandExp(data._zipCode).gen();
     await this.classLocatorFN.firstName.fill(data._firstName);   
-    await this.classLocatorLN.lastName.fill(data._lastName);
-    await this.classLocatorZip.zipCode.fill(data._zipCode);
+    await this.classLocatorLN.lastName.fill(generatedLastName);
+    await this.classLocatorZip.zipCode.fill(generatedZipCode);
 
 }
 

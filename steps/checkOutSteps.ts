@@ -23,7 +23,18 @@ async verifyAddressPage(){
     
 
 }
-async verifyAddressPagefail(){
+/*async verifyAddressPagefail(){
    await expect(this.classCheckOutPage).toHaveURL('https://www.saucedemo.com/checkout-step-fail.html');
-    }
-};
+    }*/
+
+   async verifyAddressPageFail() {
+  const expectedUrl = 'https://saucedemo.com';
+  const currentUrl = this.classCheckOutPage.url();
+
+  if (currentUrl === expectedUrl) {
+    console.log('Success');
+  } else {
+    console.log('not match');
+    throw new Error(`URL mismatch! Expected: ${expectedUrl}, but got: ${currentUrl}`);
+  }
+   }};
